@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PocketPulse</title>
+    <link rel="stylesheet" href="PP_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.min.js"></script>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">PocketPulse</div>
+        <nav class="nav-links">
+            <a href="PP_home.html">Calculator</a>
+            <a href="PP_about.html">About</a>
+        </nav>
+        <button id="toggle-theme" class="btn btn-secondary">Toggle Theme</button>
+    </header>
+
+    <main class="container">
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Personalized Inflation Index Calculator</h1>
+                <p>Generate a micro-budget inflation score based on your subjective perceptions and household profile.</p>
+                
+                <div class="input-group region-select">
+                    <label for="region-select">🌍 Select Your Region:</label>
+                    <select id="region-select" class="select-box">
+                        <option value="USA">USA</option>
+                        <option value="CANADA">CANADA</option>
+                        <option value="UK">UK</option>
+                        <option value="NIGERIA">NIGERIA</option>
+                    </select>
+                </div>
+
+                <div class="input-group method-select">
+                    <label>Select Method</label>
+                    <div class="method-buttons">
+                        <button class="btn btn-primary" id="method-slider">Questionnaire</button>
+                        <button class="btn btn-secondary" id="method-speech">Text Input</button>
+                    </div>
+                </div>
+
+                <div id="slider-input-area" class="hidden">            
+                    <div id="q-page-1" class="question-page">
+                        <div class="input-group">
+                            <label for="food_change">1. Food Cost Change (0=None, 10=Significant):</label>
+                            <input type="range" id="food_change" min="0" max="10" value="5">
+                            <span id="food_value" class="range-value">5</span>
+                        </div>
+    
+                        <div class="input-group">
+                            <label for="rent_change">2. Rent/Housing Cost Change (0=None, 10=Significant):</label>
+                            <input type="range" id="rent_change" min="0" max="10" value="5">
+                            <span id="rent_value" class="range-value">5</span>
+                        </div>
+    
+                        <div class="input-group">
+                            <label for="income_level">3. Household Resilience (0=Poor, 10=High):</label>
+                            <input type="range" id="income_level" min="0" max="10" value="5">
+                            <span id="income_value" class="range-value">5</span>
+                        </div>
+    
+                        <div class="input-group">
+                            <label for="transport_dependence">4. Transport Fuel Dependence (0=Low, 10=High):</label>
+                            <input type="range" id="transport_dependence" min="0" max="10" value="5">
+                            <span id="transport_value" class="range-value">5</span>
+                        </div>
+    
+                        <div class="input-group">
+                            <label for="utility_sensitivity">5. Utility Cost Sensitivity (0=Low, 10=High):</label>
+                            <input type="range" id="utility_sensitivity" min="0" max="10" value="5">
+                            <span id="utility_value" class="range-value">5</span>
+                        </div>
+                    </div>
+                    
+                    <div id="q-page-2" class="question-page hidden">
+                           <div class="input-group">
+                            <label for="healthcare_access">6. Healthcare/Insurance Cost (0=Low, 10=High):</label>
+                            <input type="range" id="healthcare_access" min="0" max="10" value="5">
+                            <span id="healthcare_value" class="range-value">5</span>
+                        </div>
+    
+                        <div class="input-group">
+                            <label for="debt_burden">7. Household Debt Burden (0=Low, 10=High):</label>
+                            <input type="range" id="debt_burden" min="0" max="10" value="5">
+                            <span id="debt_value" class="range-value">5</span>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="discretionary_spending">8. Change in Discretionary Spending (0=None, 10=Severe Cut):</label>
+                            <input type="range" id="discretionary_spending" min="0" max="10" value="5">
+                            <span id="discretionary_value" class="range-value">5</span>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="education_cost">9. Education/Childcare Cost Change (0=None, 10=Significant):</label>
+                            <input type="range" id="education_cost" min="0" max="10" value="5">
+                            <span id="education_value" class="range-value">5</span>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="savings_impact">10. Impact on Savings Rate (0=None, 10=Stopped Saving):</label>
+                            <input type="range" id="savings_impact" min="0" max="10" value="5">
+                            <span id="savings_value" class="range-value">5</span>
+                        </div>
+                    </div>
+
+                    <div class="pagination-controls">
+                        <button class="btn btn-secondary" id="prev-page-btn" disabled>
+                            <span aria-hidden="true">&lt;</span> Back
+                        </button>
+                        <button class="btn btn-secondary" id="next-page-btn">
+                            Next <span aria-hidden="true">&gt;</span>
+                        </button>
+                        <button class="btn btn-primary hidden" id="calculate-btn">Calculate Inflation Score</button>
+                    </div>
+                </div>
+                <div id="speech-input-area" class="hidden">
+                    <p>Describe your current household's financial stress and price changes (e.g., "Food and rent are very high, but my income is moderate.")</p>
+                    <textarea id="ai-text-input" rows="4" placeholder="Enter your financial situation description here..."></textarea>
+                    <button class="btn btn-primary" id="start-speech-btn">Analyze Text & Calculate</button>
+                </div>
+                </div>
+
+            <div class="result-visualization-area">
+                <h2>Your Personalized Score</h2>
+                <div id="gauge-chart" class="chart-container"></div>
+                
+                <div class="score-summary">
+                    <h2>Score: <span id="score-output">--</span></h2>
+                    <p id="score-interpretation">Input values and click 'Calculate' to see the result.</p>
+                    <p id="regional-comparison" class="comparison-text"></p>
+                </div>
+
+                <h2>Regional Context</h2>
+                <div id="region-map-chart" class="chart-container"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 PocketPulse. Measuring what truly matters.</p>
+    </footer>
+
+    <script src="PP.js"></script>
+</body>
+</html>

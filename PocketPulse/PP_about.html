@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PocketPulse</title>
+    <link rel="stylesheet" href="PP_style.css">
+    <link rel="stylesheet" href="PP_about_style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">PocketPulse</div>
+        <nav class="nav-links">
+            <a href="PP_home.html">Calculator</a>
+            <a href="PP_about.html" class="active-nav">About</a>
+        </nav>
+        <button id="toggle-theme" class="btn btn-secondary">Toggle Theme</button>
+    </header>
+
+    <main class="container about-page">
+        
+        <section class="about-hero">
+            <h1 class="about-title">Empowering Your <br><span class="accent-text">Micro-Economy</span>.</h1>
+            <p class="hero-subtitle">PocketPulse moves beyond the generic CPI to give you a true, personalized measure of inflation's impact on your household.</p>
+        </section>
+
+        <section class="pillars-section">
+            <div class="pillar-card" id="Pc_01">
+                <div class="icon-circle">💡</div>
+                <h3>Personalized Data</h3>
+                <p>We analyze your specific spending profile from rent and food to debt and savings to deliver a score that truly reflects your financial stress.</p>
+            </div>
+            <div class="pillar-card" id="Pc_02">
+                <div class="icon-circle">🧠</div>
+                <h3>Fuzzy Logic Core</h3>
+                <p>Using a Fuzzy Control System, PocketPulse processes subjective inputs (the sliders) and qualitative text data for an accurate, human-centric metric.</p>
+            </div>
+            <div class="pillar-card" id="Pc_03">
+                <div class="icon-circle">🌍</div>
+                <h3>Regional Context</h3>
+                <p>Compare your personal score against aggregated regional averages to understand how your experience stacks up against the broader economic climate.</p>
+            </div>
+        </section>
+        
+        <hr class="divider">
+
+        <section class="technology-section two-column-layout">
+            <div class="tech-content">
+                <h2>The Technology: Fuzzy Logic Explained</h2>
+                <p>Traditional metrics are binary and precise. Inflation, however, is a subjective experience. Our core innovation is the use of Fuzzy Logic.</p>
+                
+                <blockquote class="fuzzy-quote">
+                    "Instead of a hard 'Yes' or 'No,' Fuzzy Logic allows for 'Maybe' or 'A little bit.' This is essential for capturing the nuanced experience of cost-of-living changes."
+                </blockquote>
+
+                <p>The system converts your 0-10 slider inputs (e.g., "Food Cost Change is 8") and your text descriptions into fuzzy sets (Low, Medium, High). It then uses a robust rule-base to defuzzify this data, yielding the precise [0-20] Personal Inflation Score.</p>
+            </div>
+            <div class="tech-visual">
+                <div class="team-member">
+                    <div class="member-photo" style="background-image: url('Img/Me.jpg');"></div>
+                    <h4>Daniel Emelike</h4>
+                    <p class="member-role">Data Scientist & Full-Stack Developer</p>
+                    <p class="member-bio">Architect of the Fuzzy Logic control system and data modeling, and responsible for designing the responsive frontend UI and building the Flask API backend.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider">
+    
+    </main>
+
+    <footer>
+        <p>&copy; 2025 PocketPulse. Measuring what truly matters.</p>
+    </footer>
+
+    <script src="PP.js"></script> 
+</body>
+</html>
