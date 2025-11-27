@@ -27,6 +27,7 @@ Response: The backend returns the Personal Inflation Score and the Regional Aver
 Visualization: The frontend updates the ECharts Gauge with the user's personal score and displays a comparison text showing how the user's score stacks up against the regional average.
 
 III. Installation and Launch
+
 To run PocketPulse, you must launch the Python API server before viewing the HTML interface.
 
 1. Prerequisites
