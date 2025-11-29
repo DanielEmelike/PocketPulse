@@ -12,7 +12,7 @@ PocketPulse is a web application designed to generate a Personalized Inflation S
 | **Regional Context** | Compares the user's personal score against simulated **Regional Average Scores** for selected countries (USA, UK, Canada, Nigeria) to provide context. |
 | **Dynamic UI** | Features a responsive frontend with theme toggles, a score **Gauge Chart** (ECharts), and **Map Pins** showing regional averages. |
 
-### 🛠️ Technology Stack
+### Technology Stack
 
 | Component | Technology | Role in Project |
 | :--- | :--- | :--- |
