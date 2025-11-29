@@ -1,8 +1,8 @@
-## ✨ PocketPulse: Personalized Inflation Index Calculator
+## PocketPulse: Personalized Inflation Index Calculator
 
 PocketPulse is a web application designed to generate a Personalized Inflation Score that measures the specific financial stress and cost of living changes experienced by an individual household, moving beyond generic national metrics like the Consumer Price Index (CPI). The project's core innovation is the use of a Fuzzy Logic Control System to process subjective perceptions and qualitative data, translating them into an accurate, human-centric financial stress metric.
 
-### 🌟 Core Features
+### Core Features
 
 | Feature | Description |
 | :--- | :--- |
@@ -21,7 +21,7 @@ PocketPulse is a web application designed to generate a Personalized Inflation S
 | **Frontend UI** | **HTML5** (`PP_home.html`, `PP_about.html`), **CSS3**, **JavaScript** (`PP.js`) | Handles user interaction, pagination, method toggling, and data presentation. |
 | **Visualization** | **ECharts** (for Gauge) and **Custom CSS/JS** (for Map) | Renders the dynamic score gauge and positions interactive map pins to display regional data. |
 
-### 🧠 How the Fuzzy Logic Core Works
+### How the Fuzzy Logic Core Works
 
 The core innovation is the use of a Fuzzy Logic Control System that effectively models the non-linear, subjective nature of financial strain.
 
@@ -49,7 +49,7 @@ A comprehensive rule-base (defined in `app.py`) processes the fuzzy inputs, mode
 
 The system aggregates the fuzzy output (e.g., "partially moderate, partially high") and uses a centroid method to convert it back into a single, precise numerical result, the **Personal Inflation Score** on a **0 to 20** scale.
 
-### 🚀 Process for Project Execution
+### Process for Project Execution
 
 The application requires two separate processes to run simultaneously: the Python Flask server (Backend API) and the HTML interface (Frontend).
 
